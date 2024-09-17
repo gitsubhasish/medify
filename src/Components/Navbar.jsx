@@ -3,7 +3,7 @@ import Logo from "../assets/Medify.png";
 import Logo2 from "../assets/Vector.png";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ backgroundColor }) {
   const navigate = useNavigate();
 
   const myBookings = () => {
@@ -11,7 +11,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      className="navbar navbar-expand-lg navbar-light"
+      style={{ backgroundColor: backgroundColor }}
+    >
       <div className="container" style={{ marginLeft: 75, marginRight: 75 }}>
         <a className="navbar-brand" href="#">
           <span

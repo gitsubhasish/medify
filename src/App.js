@@ -7,7 +7,7 @@ import MyBookings from "./Pages/MyBookings";
 
 function App() {
   return (
-    <div className="App" style={{ backgroundColor: "#E8F1FF78" }}>
+    <div style={{ backgroundColor: "#E8F1FF78" }}>
       <Router>
         <Routes>
           {/* Define the routes */}

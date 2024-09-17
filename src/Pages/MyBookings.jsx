@@ -16,22 +16,35 @@ export default function MyBookings() {
   }, []);
 
   return (
-    <div className="container">
-      <Navbar />
-      <div className="" style={{ margin: 40 }}>
+    <div className="container-fluid">
+      <div
+        style={{
+          paddingLeft: "2rem",
+          paddingRight: "2rem",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          color: "#ffffff",
+          backgroundColor: "#2AA7FF",
+        }}
+      >
+        The Health and well being of the Patient and their health care, our team
+        will always be ready, so we allow best practices foor cleanliness
+      </div>
+      <Navbar backgroundColor={`#ffffff`} />
+      <div className="container" style={{ margin: 40 }}>
         <h2>My Bookings</h2>
         {bookings.length > 0 ? (
-          <div className="row p-10 d-flex flex-column justify-content-center align-items-center mt-10">
+          <div className="row p-10 d-flex flex-column align-items-center mt-10">
             {bookings.map((center, index) => (
               <div
                 className="col-12 col-md-12 mb-4"
                 key={index}
-                style={{ width: "100%" }}
+                style={{ width: "75%" }}
               >
                 <div className="card card-custom">
-                  <div className="card-body d-flex">
+                  <div className="card-body row">
                     {/* Icon placeholder */}
-                    <div className="icon-circle">
+                    <div className="icon-circle col-12 col-md-1">
                       <img
                         src={hospitalImg}
                         alt="Hospital Icon"
@@ -40,31 +53,53 @@ export default function MyBookings() {
                     </div>
 
                     {/* Medical Center Information */}
-                    <div className="flex-grow-1 text-left">
-                      <h5
-                        className="card-title mb-0"
-                        style={{ color: "#007bff" }}
+                    <div className="col-12 col-md-7">
+                      <div
+                        className="d-flex justify-content-between"
+                        style={{
+                          color: "#007bff",
+                          fontSize: 10,
+                          fontWeight: "bold",
+                        }}
                       >
-                        {center.centerName}{" "}
-                        <button
-                          className="btn btn-outline-primary btn-sm"
-                          style={{ marginLeft: 10 }}
-                        >
-                          {center.timeSlot}
-                        </button>
-                        <button
-                          className="btn btn-outline-success btn-sm ml-5"
-                          style={{ marginLeft: 10 }}
-                        >
-                          {center.date}
-                        </button>
-                      </h5>
-                      <p className="card-text">
+                        <div style={{ paddingLeft: "2rem" }}>
+                          {center.centerName}{" "}
+                        </div>
+                        <div>
+                          <span
+                            style={{
+                              marginLeft: 10,
+                              padding: 5,
+                              backgroundColor: "blue",
+                              color: "#fff",
+                            }}
+                          >
+                            {center.timeSlot}
+                          </span>
+                          <span
+                            style={{
+                              marginLeft: 10,
+                              padding: 5,
+                              backgroundColor: "green",
+                              color: "#fff",
+                            }}
+                          >
+                            {center.date}
+                          </span>
+                        </div>
+                      </div>
+                      <p
+                        className="card-text d-flex justify-content-start card-title"
+                        style={{ fontWeight: "bold", paddingLeft: "2rem" }}
+                      >
                         <small className="text-muted">
                           {center.city}, {center.state}
                         </small>
                       </p>
-                      <span>
+                      <span
+                        className="card-text d-flex justify-content-start card-title"
+                        style={{ paddingLeft: "2rem" }}
+                      >
                         <span className="price">FREE</span>
                         <small className="text-muted">
                           {" "}
@@ -74,10 +109,10 @@ export default function MyBookings() {
                     </div>
 
                     {/* Action Area */}
-                    <div className="ml-auto text-right d-flex flex-column align-items-end justify-content-center">
+                    <div className="col-12 col-md-3">
                       <br />
                       <span style={{ color: "green" }}>Available Today</span>
-                      <button className="btn btn-custom">
+                      <button className="btn btn-info btn-sm">
                         Book FREE Center Visit
                       </button>
                     </div>

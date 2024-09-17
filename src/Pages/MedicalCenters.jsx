@@ -30,12 +30,12 @@ export default function MedicalCenters() {
       <Navbar />
 
       <div className="" style={{ margin: 40 }}>
-        <h2>
+        <h2 className="d-flex justify-content-center">
           {medicalCenters.length} Medical Centers Available in{" "}
           {medicalCenters[0].State}
         </h2>
         {medicalCenters.length > 0 ? (
-          <div className="row p-10 d-flex flex-column justify-content-center align-items-center mt-10">
+          <div className="row p-10 d-flex flex-column justify-content-center align-items-center mt-15">
             {medicalCenters.map((center, index) => (
               <MedicalCard center={center} index={index} />
             ))}
