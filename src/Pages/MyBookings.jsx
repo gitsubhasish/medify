@@ -32,7 +32,7 @@ export default function MyBookings() {
       </div>
       <Navbar backgroundColor={`#ffffff`} />
       <div className="container" style={{ margin: 40 }}>
-        <h2>My Bookings</h2>
+        <h2 className="d-flex justify-content-center">My Bookings</h2>
         {bookings.length > 0 ? (
           <div className="row p-10 d-flex flex-column align-items-center mt-10">
             {bookings.map((center, index) => (
